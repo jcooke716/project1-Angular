@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card m-5">
+        <form #myFormTemplate="ngForm" (ngSubmit)="submitRequest()" enctype="application/x-www-form-urlencoded">
+            <div class="card-header bg-success">Submit A Reimbursement Request</div>
+            <div class="card-body">
+                <div class="mb-3 mt-3">
+                    <label for="amount" class="form-label">Amount:</label>
+                    <input type="text" class="form-control" id="amount" placeholder="Enter amount" name="amount"
+                        required #myAmount="ngModel" [(ngModel)]="newPending.pendingAmount">
+                    <div *ngIf="!myAmount.valid" class="small text-danger">Amount is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="reason" class="form-label">Reason for Reimbursement:</label>
+                    <input type="reason" class="form-control" id="reason" placeholder="Enter reason for expense" name="reason"
+                        required #myReason="ngModel" [(ngModel)]="newPending.pendingReason">
+                    <div *ngIf="!myReason.valid && (myReason.dirty || myReason.touched)" class="small text-danger">Reason is required!</div>
+                </div>
+                <div class="card-footer bg-success">
+                    <!-- <button type="button" (click)="updateBook()">Update</button> -->
+                    <button [disabled]="!myFormTemplate.valid" type="submit" class="btn btn-light">Sumbit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

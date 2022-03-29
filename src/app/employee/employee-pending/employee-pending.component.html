@@ -1,0 +1,37 @@
+
+<div class="container">
+    <h3>Pending Requests</h3>
+    <div>
+        <button type="button" class="btn btn-success" (click)="goToUploadReceipt()">Submit A Receipt</button>
+    </div><br>
+    <div>
+        <button type="button" class="btn btn-success" (click)="goToSubmitRequest()">Submit A Request</button>
+    </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Employee</th>
+            <th>Amount</th>
+            <th>Reason</th>
+            <th>Created At</th>
+            <th>Resolved At</th>
+            <th>Manager</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let expense of allPending">
+            <td>{{ expense.expenseId }}</td>
+            <td>{{ expense.expenseEmp }}</td>
+            <td>{{ expense.expenseAmount | currency:'USD' }}</td>
+            <td>{{ expense.expenseReason }}</td>
+            <td>{{ expense.expenseCreated }}</td>
+            <td>{{ expense.expenseResolved }}</td>
+            <td>{{ expense.expenseAdmin }}</td>
+            <td>{{ expense.expenseStatus }}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

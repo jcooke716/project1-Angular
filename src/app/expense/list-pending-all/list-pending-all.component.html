@@ -1,0 +1,34 @@
+<div class="container">
+    <h3>Pending Requests</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Employee</th>
+            <th>Amount</th>
+            <th>Reason</th>
+            <th>Created At</th>
+            <th>Resolved At</th>
+            <th>Manager</th>
+            <th>Status</th>
+            <th>Approve</th>
+            <th>Deny</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let expense of allExpenses">
+            <td>{{ expense.expenseId }}</td>
+            <td>{{ expense.expenseEmp }}</td>
+            <td>{{ expense.expenseAmount | currency:'USD' }}</td>
+            <td>{{ expense.expenseReason }}</td>
+            <td>{{ expense.expenseCreated }}</td>
+            <td>{{ expense.expenseResolved }}</td>
+            <td>{{ expense.expenseAdmin }}</td>
+            <td>{{ expense.expenseStatus }}</td>
+            <td><button class = "btn btn-success" (click)="approveRequest(expense.expenseId)"><i class="material-icons">thumb_up</i></button></td>
+            <td><button class = "btn btn-danger" (click)="denyRequest(expense.expenseId)"><i class="material-icons">thumb_down</i></button></td>
+        </tr>
+    </tbody>
+</table>
+</div>

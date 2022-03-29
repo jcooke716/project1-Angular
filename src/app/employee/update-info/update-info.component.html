@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="card m-5">
+        <form #myFormTemplate="ngForm" (ngSubmit)="updateInfo()" enctype="application/x-www-form-urlencoded">
+            <div class="card-header bg-warning">Update Your Info</div>
+            <div class="card-body">
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Employee ID:</label>
+                    {{ oldEmployee.empId }}
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter email address" name="email"
+                        required #myEmail="ngModel" [(ngModel)]="oldEmployee.empEmail">
+                    <div *ngIf="!myEmail.valid" class="small text-danger">Email address is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="text" class="form-control" id="password" placeholder="Enter password" name="password"
+                        required #myPassword="ngModel" [(ngModel)]="oldEmployee.empPassword">
+                    <div *ngIf="!myPassword.valid" class="small text-danger">Password is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="firstName" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" name="firstName"
+                        required #myFirstName="ngModel" [(ngModel)]="oldEmployee.empFirstName">
+                    <div *ngIf="!myFirstName.valid" class="small text-danger">First name is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="lastName" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" name="lastName"
+                        required #myLastName="ngModel" [(ngModel)]="oldEmployee.empLastName">
+                    <div *ngIf="!myLastName.valid" class="small text-danger">Last name is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="contact" class="form-label">Phone number:</label>
+                    <input type="text" class="form-control" id="contact" placeholder="Enter phone number" name="contact"
+                        required #myContact="ngModel" [(ngModel)]="oldEmployee.empContact">
+                    <div *ngIf="!myContact.valid" class="small text-danger">Phone number is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter address" name="address"
+                        required #myAddress="ngModel" [(ngModel)]="oldEmployee.empAddress">
+                    <div *ngIf="!myAddress.valid" class="small text-danger">Address is required!</div>
+                </div>
+            </div>
+            <div class="card-footer bg-warning">
+                <!-- <button type="button" (click)="updateBook()">Update</button> -->
+                <button [disabled]="!myFormTemplate.valid" type="submit" class="btn btn-light">Update</button>
+            </div>
+        </form>
+    </div>
+</div>

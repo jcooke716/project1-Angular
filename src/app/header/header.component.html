@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='employee'">
+                <a class="nav-link" routerLink="welcome"><i class="material-icons">home</i></a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
+                <a class="nav-link" routerLink="homepage"><i class="material-icons">home</i></a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
+                <a class="nav-link" routerLink="pending-all">View Pending Expenses</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
+                <a class="nav-link" routerLink="resolved-all">View Resolved Expenses</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
+                <a class="nav-link" routerLink="list-employees">Employee List</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='employee'">
+                <a class="nav-link" routerLink="employee-info">View My Information</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='admin'">
+                <a class="nav-link" routerLink="list-employee-expense">Employee Expenses</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='employee'">
+                <a class="nav-link" routerLink="employee-pending">View Pending Requests</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='employee'">
+                <a class="nav-link" routerLink="employee-resolved">View Resolved Requests</a>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn()">
+                <a class="nav-link" routerLink="login">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn()">
+                <a class="nav-link" routerLink="logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+  </nav>

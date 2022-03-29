@@ -1,0 +1,49 @@
+<div class="container">
+    <div class = "row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center text-dark mt-5">{{ pageName }}</h2>
+            <div class="text-center mb-5 text-dark">{{ errorMessage }}</div>
+            <div class="card my-5">
+                <form class="card-body cardbody-color p-lg-5" (ngSubmit)="validateUser()" enctype="application/x-www-form-urlencoded">
+                    <div class="text-center"><img src="https://cdn.pixabay.com/photo/2017/06/22/10/04/lock-2430207_1280.png" class="img-fluid profile-image-pic img-thumbnail rounded-cirle my-3" width="200 px" alt="profile"></div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" [(ngModel)]="newUser.email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" [(ngModel)]="newUser.password">
+                    </div>
+                    <div class="mb-3">
+                        <input type="radio" id="admin" name="admin" value="admin" [(ngModel)]="newUser.role"/>Admin <input type="radio" id="employee" name="employee" value="employee" [(ngModel)]="newUser.role"/>Employee
+                    </div>
+                    <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <form (ngSubmit)="validateUser()">
+    <div class="card-header bg-success text-white">Login<div>{{ errorMessage }}</div>
+    </div>
+    <div class="card-body">
+        <div class="mb-3 mt-3">
+            <label for="username" class="form-label">Email:</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter email" name="email"
+                [(ngModel)]="newUser.email">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"
+                [(ngModel)]="newUser.password">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="role" class="form-label">Role: </label><br>
+            <input type="radio" id="admin" name="admin" value="admin" [(ngModel)]="newUser.role"/>Admin <input type="radio" id="employee" name="employee" value="employee" [(ngModel)]="newUser.role"/>Employee -->
+            <!-- <input type="text" class="form-control" id="role" placeholder="Enter role" name="role"
+                [(ngModel)]="newUser.role"> -->
+        <!-- </div>
+    </div>
+    <div class="card-footer bg-success"><button type="submit" class="btn btn-light">Login</button></div>
+</form> -->
+
+

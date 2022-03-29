@@ -1,0 +1,38 @@
+<div class="container">
+    <h3>Expenses by Employee</h3>
+    <form (ngSubmit)="fetchEmployeeExpenses()">
+        <div>
+            <label for="empId" class="form-label">Employee ID: </label><br>
+            <input type="text" id="empId" placeholder="Enter Employee Id" name="empId" [(ngModel)]="newEmployee.empId"> 
+            <button type="submit">List Expenses</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Employee</th>
+                    <th>Amount</th>
+                    <th>Reason</th>
+                    <th>Created At</th>
+                    <th>Resolved At</th>
+                    <th>Manager</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let expense of allExpenses">
+                    <td>{{ expense.expenseId }}</td>
+                    <td>{{ expense.expenseEmp }}</td>
+                    <td>{{ expense.expenseAmount | currency:'USD' }}</td>
+                    <td>{{ expense.expenseReason }}</td>
+                    <td>{{ expense.expenseCreated }}</td>
+                    <td>{{ expense.expenseResolved }}</td>
+                    <td>{{ expense.expenseAdmin }}</td>
+                    <td>{{ expense.expenseStatus }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+    

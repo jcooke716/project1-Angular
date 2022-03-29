@@ -1,0 +1,29 @@
+<div class="container">
+    <h3>My Info</h3>
+    <div>
+        <button type="button" class="btn btn-success" (click)="goToEditInfo()">Update Info</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ newUser.id }}</td>
+                <td>{{ newUser.firstName }} {{ newUser.lastName }}</td>
+                <td>{{ newUser.email }}</td>
+                <td>{{ newUser.password }}</td>
+                <td>{{ newUser.contact }}</td>
+                <td>{{ newUser.address }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
